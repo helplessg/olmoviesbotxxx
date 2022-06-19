@@ -866,7 +866,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b><i>Movie Name : {search}\nRequested By : {message.from_user.mention}\nGroup : {message.chat.title} \n📢 Note: This message will be\nAuto-deleted after 10 minutes to Avoid copyright issues ⏰</i></b>"
+        cap = f"<b><i>[Movie Name] : {search}\n[Requested By] : {message.from_user.mention}\n[Group] : {message.chat.title} \n📢 Note: This message will be\nAuto-deleted after 02 hour's  to Avoid copyright issues ⏰</i></b>"
 
     if imdb and imdb.get('poster'):
 
@@ -874,7 +874,7 @@ async def auto_filter(client, msg, spoll=False):
 
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(600)
+            await asyncio.sleep(7200)
 
             await hehe.delete()            
 
@@ -886,7 +886,7 @@ async def auto_filter(client, msg, spoll=False):
 
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(600)            
+            await asyncio.sleep(7200)            
 
         except Exception as e:
 
@@ -894,13 +894,13 @@ async def auto_filter(client, msg, spoll=False):
 
             fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(600)            
+            await asyncio.sleep(7200)            
 
     else:
 
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
 
-        await asyncio.sleep(600)
+        await asyncio.sleep(7200)
 
         await fuk.delete()
 
