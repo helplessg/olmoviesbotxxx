@@ -128,7 +128,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡[{get_size(file.file_size)}]🎥 {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"⚡[{get_size(file.file_size)}]🎥{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -199,7 +199,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase')
+            k = await query.message.edit('💔 This Movie Not Found In DataBase\nContact @robo_glitch')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -682,7 +682,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('♻️ ʀᴇꜰʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -698,10 +698,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
+        await query.answer("ʀᴇꜰʀᴇsʜɪɴɢ ᴅᴀᴛᴀʙᴀsᴇ...⏳")
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('♻️ ʀᴇꜰʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -798,7 +798,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡[{get_size(file.file_size)}]🎥 {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"⚡[{get_size(file.file_size)}]🎥{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -866,7 +866,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b><i>[Movie Name] : {search}\n[Requested By] : {message.from_user.mention}\n[Group] : {message.chat.title} \n📢 Note: This message will be\nAuto-deleted after 02 hour's  to Avoid copyright issues ⏰</i></b>"
+        cap = f"<b><i>[ᴍᴏᴠɪᴇ ɴᴀᴍᴇ] : {search}\n[ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ] : {message.from_user.mention}\n📢 ɴᴏᴛᴇ: ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ\nᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 02 ʜᴏᴜʀ's ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ⏰</i></b>"
 
     if imdb and imdb.get('poster'):
 
@@ -955,7 +955,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    await msg.reply("❌ Wrong Name or Spelling\nDid you mean any one of these❓",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
