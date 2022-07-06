@@ -914,7 +914,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ ɴᴇᴇᴅ ʜᴇʟᴘ** 💌 : <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
+        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ**💌 : <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
         await asyncio.sleep(20)
         await k.delete()
         return
@@ -943,7 +943,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ** 💌: <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
+        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ**💌: <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
         await asyncio.sleep(20)
         await k.delete()
         return
@@ -955,7 +955,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    ano = await msg.reply("❌ ᴡʀᴏɴɢ **ɴᴀᴍᴇ** ᴏʀ **Sᴘᴇʟʟɪɴɢ**\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\n**➤ ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ** 👇",
+    ano = await msg.reply("❌ ᴡʀᴏɴɢ **ɴᴀᴍᴇ** ᴏʀ **Sᴘᴇʟʟɪɴɢ**\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\n**➤ ➤ ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ** 👇",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await ano.delete()
