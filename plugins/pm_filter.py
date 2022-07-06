@@ -187,7 +187,7 @@ async def advantage_spoll_choker(bot, query):
         return await query.answer("okDa", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
-    movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
+    movies = SPELL_CHECK.get(query.message.reply_to_message)
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
@@ -722,7 +722,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('ᴄʜᴇᴄᴋɪɴɢ...🔍')
 
         if status == "True":
             await save_group_settings(grpid, set_type, False)
@@ -866,7 +866,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b><i>[ᴍᴏᴠɪᴇ ɴᴀᴍᴇ] : {search}\n[ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ] : {message.from_user.mention}\n📢 ɴᴏᴛᴇ: ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ\nᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 02 ʜᴏᴜʀ's ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ⏰</i></b>"
+        cap = f"<b><i>[ᴍᴏᴠɪᴇ ɴᴀᴍᴇ] : {search}\n[ʀᴇǫ ʙʏ] : {message.from_user.mention}\n📢 ɴᴏᴛᴇ: ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ\nᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 02 ʜᴏᴜʀ's ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ⏰</i></b>"
 
     if imdb and imdb.get('poster'):
 
@@ -914,7 +914,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ sᴘᴇʟʟɪɴɢ 💔.")
+        k = await msg.reply("💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ : <a href=https://t.me/GlitchAssistantBot>[ᴡʀɪᴛᴇ ʜᴇʀᴇ]</a>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -943,7 +943,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ : <a href=https://t.me/GlitchAssistantBot>[ᴡʀɪᴛᴇ ʜᴇʀᴇ]</a>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -955,7 +955,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    ano = await msg.reply("❌ ᴡʀᴏɴɢ ɴᴀᴍᴇ ᴏʀ sᴘᴇʟʟɪɴɢ\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\nᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ 👇",
+    ano = await msg.reply("❌ᴡʀᴏɴɢ ɴᴀᴍᴇ ᴏʀ sᴘᴇʟʟɪɴɢ\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\nᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ 👇",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await ano.delete()
