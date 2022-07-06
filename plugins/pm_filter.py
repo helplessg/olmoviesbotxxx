@@ -105,7 +105,7 @@ async def give_filter(client,message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("ᴅᴏɴ'ᴛ ᴛᴏᴜᴄʜ ᴏᴛʜᴇʀs ᴘʀᴏᴘᴇʀᴛʏ 😒", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -128,7 +128,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡[{get_size(file.file_size)}]🎥{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]⪼{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -187,7 +187,7 @@ async def advantage_spoll_choker(bot, query):
         return await query.answer("okDa", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
-    movies = SPELL_CHECK.get(query.message.reply_to_message)
+    movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
@@ -199,7 +199,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('💔 This Movie Not Found In DataBase\nContact @robo_glitch')
+            k = await query.message.edit('💔 ᴛʜɪs ᴍᴏᴠɪᴇ ɴᴏᴛ ꜰᴏᴜɴᴅ ɪɴ ᴅᴀᴛᴀʙᴀsᴇ\nᴡʀɪᴛᴇ ✍  #ʀᴇǫᴜᴇsᴛ ᴍᴏᴠɪᴇ/ sᴇʀɪᴇs ɴᴀᴍᴇ ɪ ᴡɪʟʟ ʀᴇᴘᴏʀᴛ ᴛʜɪs ᴛᴏ ᴀᴅᴍɪɴs ⚡')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -482,7 +482,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply2 = await reply1.edit_text(
 
@@ -490,7 +490,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply3 = await reply2.edit_text(
 
@@ -498,7 +498,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply4 = await reply3.edit_text(
 
@@ -531,7 +531,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply2 = await reply1.edit_text(
 
@@ -539,7 +539,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply3 = await reply2.edit_text(
 
@@ -547,7 +547,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply4 = await reply3.edit_text(
 
@@ -576,7 +576,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply2 = await reply1.edit_text(
 
@@ -584,7 +584,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply3 = await reply2.edit_text(
 
@@ -592,7 +592,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         )
 
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
 
         reply4 = await reply3.edit_text(
 
@@ -769,7 +769,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    await query.answer('ᴄʜᴇᴄᴋɪɴɢ...🔍')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -798,7 +798,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡[{get_size(file.file_size)}]🎥{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]⪼{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -914,7 +914,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ sᴘᴇʟʟɪɴɢ 💔.")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -955,9 +955,9 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    ano = await msg.reply("❌ Wrong Name or Spelling\nDid you mean any one of these❓",
+    ano = await msg.reply("❌ ᴡʀᴏɴɢ ɴᴀᴍᴇ ᴏʀ sᴘᴇʟʟɪɴɢ\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\nᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ 👇",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(30)
+    await asyncio.sleep(20)
     await ano.delete()
 
 
