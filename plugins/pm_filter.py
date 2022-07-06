@@ -957,7 +957,9 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
     await msg.reply("❌ Wrong Name or Spelling\nDid you mean any one of these❓",
                     reply_markup=InlineKeyboardMarkup(btn))
+await asyncio.sleep(30)
 
+    await ano.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
