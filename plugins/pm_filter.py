@@ -914,7 +914,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ\nɴᴇᴇᴅ ʜᴇʟᴘ**💌 : <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
+        k = await msg.reply("**💔 ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ Sᴘᴇʟʟɪɴɢ ✔ 🙂\n➤ ɴᴇᴇᴅ ʜᴇʟᴘ** 💌 : <a href=https://t.me/GlitchAssistantBot>**[ᴡʀɪᴛᴇ ʜᴇʀᴇ]**</a>")
         await asyncio.sleep(20)
         await k.delete()
         return
