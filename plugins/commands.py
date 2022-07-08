@@ -244,7 +244,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('➕ ༒Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs༒ ➕', url='http://t.me/{temp.U_NAME}?startgroup=true') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('➕ ༒Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs༒ ➕', url='http://t.me/OlMoviesBot?startgroup=true') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
