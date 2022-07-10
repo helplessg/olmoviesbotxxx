@@ -128,7 +128,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]⪼{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]➤{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -798,7 +798,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]⪼{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]➤{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -866,7 +866,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b><i>[ᴍᴏᴠɪᴇ ɴᴀᴍᴇ] : {search}\n[ʀᴇǫ ʙʏ] : {message.from_user.mention}\n📢 ɴᴏᴛᴇ: ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ\nᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 02 ʜᴏᴜʀ's ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ⏰</i></b>"
+        cap = f"<b><i>🎥 {search}\nʀᴇǫ ʙʏ ➤ : {message.from_user.mention}\n📢 ɴᴏᴛᴇ: ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ\nᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 02 ʜᴏᴜʀ's ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ⏰</i></b>"
 
     if imdb and imdb.get('poster'):
 
@@ -955,7 +955,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    ano = await msg.reply("❌ ᴡʀᴏɴɢ **ɴᴀᴍᴇ** ᴏʀ **Sᴘᴇʟʟɪɴɢ**\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ❓\n**➤ ➤ ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ** 👇",
+    ano = await msg.reply("❌ ᴡʀᴏɴɢ **ɴᴀᴍᴇ** ᴏʀ **Sᴘᴇʟʟɪɴɢ**\nᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇsᴇ\n**➤ ➤ ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴏɴᴇ** 👇",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await ano.delete()
